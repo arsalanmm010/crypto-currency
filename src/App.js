@@ -15,7 +15,6 @@ function App() {
     }
     apiReq();
   }, []);
-  console.log(data[0]);
   return (
     <div>
       <Nav />

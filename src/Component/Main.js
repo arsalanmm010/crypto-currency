@@ -1,8 +1,16 @@
 import { Card, CardContent, Typography } from "@mui/material";
+import { useState } from "react";
 
 const Main = ({ data }) => {
+  const [selected, setSelected] = useState();
+
   if (!data[0]) {
     return "Loading...";
+  }
+
+  function handleChange(data) {
+    let pric = parseFloat(data).toFixed(2);
+    setSelected(pric);
   }
 
   const getOption = (data) => {
@@ -27,18 +35,19 @@ const Main = ({ data }) => {
       <Card sx={{ minWidth: 275 }} className="card">
         <CardContent className="content">
           <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
-            <select>{getOption(data)}</select>
+            <select
+              className="select"
+              onChange={(e) => handleChange(e.target.value)}
+            >
+              <option>Select Coin</option>
+              {getOption(data)}
+            </select>
           </Typography>
           <br />
           <Typography variant="h4" component="div">
-            {data[0].price}
+            price = ${selected}
           </Typography>
           <br />
-          <Typography variant="h6">Rank={data[0].rank}</Typography>
-          <br />
-          <Typography variant="body3">Status={data[0].status}</Typography>
-          <br />
-          <Typography variant="h6">id="{data[0].id}"</Typography>
         </CardContent>
       </Card>
     </div>

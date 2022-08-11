@@ -10,10 +10,7 @@ export const fetchData = async () => {
     for (let i = 0; i < 100; i++) {
       updatedData[i] = {
         name: data[i].name,
-        id: data[i].id,
         price: data[i].price,
-        rank: data[i].rank,
-        status: data[i].status,
       };
 
       // return updatedData;
