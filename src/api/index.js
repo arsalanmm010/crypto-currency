@@ -12,23 +12,8 @@ export const fetchData = async () => {
         name: data[i].name,
         price: data[i].price,
       };
-
-      // return updatedData;
     }
-    // console.log(updatedData[0].name);
     return updatedData;
-
-    // let updatedData;
-    // for (let i = 0; i < 100; i++) {
-    //   updatedData[i] = {
-    //     name: data[i].name,
-    //     id: data[i].id,
-    //     price: data[i].price,
-    //     rank: data[i].rank,
-    //     status: data[i].status,
-    //   };
-    // }
-    // return updatedData;
   } catch (error) {
     console.log(error);
   }
